@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import YourMenuComponent from "./components/Header/head";
+import Main from "./components/main/main";
+import Equipment from "./components/Goods/prem";
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import Header from "./components/Header/head";
+import CarList from "./components/Goods/prem";
+import CardDetails from "./components/Card/Card";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header></Header>
+        <div className="changeable_content">
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route path='/home' element={<Main />} />
+          <Route path='/car/:id' element={<CardDetails />} />
+          <Route path='/cosmetology' element={<CarList />} />
+          </Routes>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

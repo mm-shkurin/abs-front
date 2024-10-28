@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic');
+.tg-but{
+  color: red;
+}
+.container {
+  margin: 0 auto; /* Центровка контейнера */
+  }
+  
+  .header_row {
+  display: flex;
+  justify-content: space-between; /* Размещение логотипа и меню по краям */
+  align-items: center; /* Вертикальное выравнивание */
+  }
+
+@media screen and (max-width: 1100px){
+  .container {
+    margin: 0% 2% 0% 2%;
+}
+}
+.topmenu > li > ul.submenu > li.submenu-item > a::after {
+    content: none;
+  }
+  
+  /* Add arrow styles specifically to "Оздоровительное питание" link */
+  .topmenu > li > ul.submenu > li.submenu-item > a.arrow-down::after {
+    content: ' ▼'; /* Down arrow character */
+    font-family: sans-serif;
+    color: inherit;
+    margin-left: 10px;
+  }
+  
+  .topmenu > li > ul.submenu > li.submenu-item > a.arrow-up::after {
+    content: ' ▲'; /* Up arrow character */
+  }
+nav {
+  text-align: center;
+  margin-top: 8%;
+}
+
+nav a {
+  text-decoration: none;
+  display: block;
+  transition: .3s linear;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.topmenu > li {
+  display: inline-block;
+  position: relative;
+  margin-right: -4px;
+  border-left: 1px solid #ECF1F2;
+}
+
+.topmenu > li:last-child {
+  border-right: 1px solid #ECF1F2;
+}
+
+.topmenu > li > a {
+  padding: 20px 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  color: #0F6985;
+  font-weight: 600;
+}
+
+.active:after,
+.submenu-link:after {
+  font-family: sans-serif;
+  color: inherit;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.topmenu,
+.topmenu > li > a:hover,
+.submenu li a:hover {
+  color: #ddbe86;
+}
+
+.submenu {
+  position: absolute;
+  left: -1px;
+  z-index: 5;
+  width: 240px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .3s ease-in-out;
+}
+
+.submenu li {
+  position: relative;
+}
+
+.submenu a {
+  background: white;
+  border-top: 1px solid #ECF1F2;
+  border-right: 1px solid #ECF1F2;
+  border-left: 1px solid #ECF1F2;
+  color: #0F6985;
+  font-weight: bold;
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+}
+
+.submenu .submenu {
+  position: absolute;
+  top: 0;
+  left: calc(100% - 1px);
+  left: -webkit-calc(100% - 1px);
+}
+
+nav li:hover > .submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.burger-button {
+  display: none;
+}
+
+.container {
+  background-color: #ffffff;
+}
+
+.topmenu > li > a.arrow-down:after {
+  content: ' ▼'; /* Down arrow character */
+}
+
+.topmenu > li > a.arrow-up:after {
+  content: ' ▲'; /* Up arrow character */
+}
+
+.submenu-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 1054px) {
+  .topmenu > li > a {
+    font-size: 14px;
+  }
+  .submenu a{
+    font-size: 14px;
+  }
+  .container{
+    min-width: 990px;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .topmenu > li > a {
+    font-size: 12px;
+  }
+  
+  .submenu a{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 857px) {
+    
+    .topmenu {
+    display: none;
+    flex-direction: column;
+  }
+
+  .burger-button {
+    display: block;
+    position: relative;
+    z-index: 1001;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .burger-button .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .burger-button.open .bar:nth-child(1) {
+    transform: rotate(-50deg) translate(-7px, 6px);
+  }
+
+  .burger-button.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-button.open .bar:nth-child(3) {
+    transform: rotate(50deg) translate(-7px, -6px);
+  }
+
+  .topmenu.burger-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+  }
+
+  .topmenu.burger-open li {
+    display: block;
+    text-align: left;
+    border: none;
+    margin: 0;
+  }
+
+  .topmenu.burger-open > li > ul.submenu {
+    display: none; /* Hide submenus by default in burger menu */
+  }
+
+  .topmenu.burger-open > li.submenu-open > ul.submenu {
+    display: block; /* Show submenus when the parent is active in burger menu */
+  }
+
+  .submenu {
+    position: static;
+    width: 100%;
+    padding: 0;
+    border: none;
+    visibility: hidden; /* Hide by default on mobile */
+    opacity: 0; /* Hide by default on mobile */
+    transform: translateY(10px); /* Hide by default on mobile */
+    transition: .3s ease-in-out;
+  }
+
+  .submenu-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .topmenu.burger-open > li > ul.submenu > li > ul.submenu {
+    display: none; /* Hide nested submenus by default */
+  }
+
+  .topmenu.burger-open > li > ul.submenu > li.submenu-open > ul.submenu {
+    display: block; /* Show nested submenus when the parent is active */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topmenu > li > a {
+    font-size: 10px;
+  }.submenu a {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+  .submenu a{
+    font-size: 12px;
+  }
+}

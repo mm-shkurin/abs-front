@@ -1,0 +1,458 @@
+.conteiner{
+    padding: 0% 10% 0% 10%;
+}
+.pic{
+    padding-top: 5%;
+    margin-left: 10%;
+    width: 40%;
+    display: inline-block;
+
+}
+.txt-content{
+    width: 40%;
+    display: inline-block;
+}
+.txt-content p{
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.txt-content h1{
+    font-size: 64px;
+    font-family: sans-serif;
+}
+.services{
+    display: inline-block;
+    width: 45%;
+}
+.second-txt{
+    display: inline-block;
+    margin-left:2.5%;
+    width: 40%;
+}
+.second-txt h1{
+    font-size: 64px;
+    font-family: sans-serif;
+    text-align: center;
+}
+.ransom{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.second-txt title{
+    font-size: 18px;
+}
+.main-ransom{
+    border-top: 2.5px solid black;
+}
+.txt-ransom{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.second-content h1{
+    font-family: sans-serif;
+    font-size: 45px;
+    text-align: center;
+}
+.services2{
+    display: none;
+}
+.contact h1{
+    font-size: 25px;
+    text-align: left;
+}
+.contact{
+    display: inline-block;
+    font-family: sans-serif;
+    margin-left: 10%;
+    vertical-align:top;
+}
+.map{
+    display: inline-block;
+}
+.contact a{
+    text-decoration: none;
+    color: black;
+
+}
+.contact p{
+    font-size: 20px;
+}
+.thrid-content{
+    margin-top: 5%;
+}
+.rub{
+    width:40px;
+    vertical-align: top;
+}
+.credit-content{
+    display: flex;
+    align-items:center;
+}
+.credit-txt span{
+    margin-left: 5px;
+    font-size: 22px;
+    font-family: sans-serif;
+    color:#283136;
+}
+.credit-all{
+    display:inline-block;
+}
+.credit-all1{
+    display:inline-block;
+    margin-left: 190px;
+}
+.credits-work2{
+    display:none
+}
+.solaris{
+    width: 55%;
+
+}
+
+.credit-ysl{
+    display: flex;
+    align-items:center;
+    margin-top: 50px;
+}
+.ysl-txt p{
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.ysl-txt{
+    margin-left: 20px;
+}
+@media screen and (max-width: 1300px){
+    .conteiner{
+        padding:0% 5% 0% 5%;
+    }
+    .pic{
+        padding-top: 0px;
+    }
+    .txt-content h1{
+        margin-top: 0px;
+    }
+    .ransom{
+        font-size: 28px;
+    }
+    .topmenu > li > a{
+        font-size:20px;
+    }
+    .logo{
+        width: 233px;
+    }
+}
+@media screen and (max-width: 1200px){
+    .second-content h1{
+        font-size: 30px;
+    }
+    .topmenu > li > a{
+        font-size:18px;
+    }
+    .credit-all1{
+        margin-left: 150px;
+    }
+    .ysl-txt p{
+        font-size: 18px;
+    }
+    .conteiner {
+        padding: 0% 3% 0% 3%;
+    }
+}
+@media screen and (max-width: 1080px){
+    .second-content h1{
+        font-size: 30px;
+    }
+    .topmenu > li > a{
+        font-size:17px;
+    }
+    .credit-all1{
+        margin-left: 150px;
+    }
+    .ysl-txt p{
+        font-size: 18px;
+    }
+    .conteiner {
+        padding: 0% 3% 0% 3%;
+    }
+    .ransom{
+        font-size: 24px;
+    }
+    .rub{
+        width: 37px;
+    }
+    .thrid-content h1{
+        font-size: 24px;
+    }
+    .contact h1{
+        font-size: 20px;
+    }
+    .credit-all1{
+        margin-left: 120px;
+    }
+    .logo{
+        width: 215px;
+    }
+}
+
+@media screen and (max-width: 984px){
+    .credit-all1{
+        margin-left: 60px;
+    }
+}
+
+@media screen and (max-width: 855px){
+    .credit-all1{
+        margin-left: 50px;
+    }
+}
+@media screen and (max-width: 820px){
+    .credit-all{
+        flex-direction: column;
+    }
+    .credit-all1{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+        margin-top: 30px;
+    }
+    .rub{
+        width: 50px;
+    }
+    .bank{
+        width: 60px;
+    }
+    .credits-work{
+        display: inline-block;
+        width: 50%;
+
+    }
+    .credit-ysl{
+        display: inline-block;
+        width: 50%;
+        margin-top: 0px;
+    }
+    .solaris{
+        display: none;
+    }
+    .contact{
+        margin-left: 22px;
+    }
+    .ransom{
+        font-size:20px;
+    }
+    .txt-ransom{
+        font-size:18px;
+        font-family:Helvetica;
+    }
+    .txt-content p{
+        font-size: 19px;
+    }
+    .txt-content h1{
+        font-size: 50px;
+    }
+    .container{
+        min-width: 480px;
+    }
+}
+@media screen and (max-width: 769px){
+    .contact p{
+        font-size: 17px;
+    }
+    .contact h1{
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 541px){
+    .conteiner{
+        padding: 0% 0% 0% 0%;
+    }
+    .logo{
+        width:303px
+    }
+    nav{
+        margin-top: 20%;
+    }
+    .txt-content h1{
+        font-size: 32px;
+        text-align: center;
+    }
+    .txt-content{
+        width: 100%;
+    }
+    .pic{
+        width: 85%;
+        margin-left: 5%;
+    }
+    .first-content{
+        padding: 0% 10% 0% 10%;
+        border-bottom: 1px solid #283136;
+    }
+    .services{display: none}
+    .services2{
+        display: inline-block;
+        width: 57%;
+    }
+    .ransom{
+        font-size: 17px;
+    }
+    .txt-ransom{
+        font-size: 16px;
+    }
+    .ysl-txt p {
+        font-size: 16px;
+    }
+    .credits-work{
+        display: none;
+    }
+    .credits-work2{
+        display:block;
+        padding: 0% 0% 0% 5%;
+    }
+    .credit-ysl{
+        display: block;
+        width: 90%;
+        text-align: justify;
+        margin: 0% 2% 0% 2%;
+    } 
+    .credit{
+        border-bottom: 1px solid #283136;
+    }
+    .credit-content1{
+        display: flex;
+        align-items:center;
+    }
+    .credit-txt1 span{
+        margin-left: 10px;
+        font-size: 32px;
+        font-family: sans-serif;
+        color:#283136;
+    }
+    .credit-all2{
+        display:inline-block;
+        margin-bottom: 4%;
+    }
+    .credit-all3{
+        display:inline-block;
+        margin-bottom: 4%;
+        margin-left: 1%;
+    }
+    .credit-txt2 span{
+        font-size: 32px;
+        font-family: sans-serif;
+        margin-left: 30px;
+        color: #283136;
+    }
+    .contact p{
+        font-size: 24px;
+    }
+    .contact h1{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 481px){
+    .container {
+        min-width: 330px;
+    }
+}
+@media screen and (max-width: 431px){
+    .credit-txt1 span{
+        margin-left: 10px;
+        font-size: 26px;
+        font-family: sans-serif;
+        color:#283136;
+    }       
+    .credit-txt2 span{
+        font-size:26px;
+        font-family: sans-serif;
+        margin-left: 20px;
+        color: #283136;
+        font-size: 25px;
+    }
+    .rub1{
+        width: 17%;
+    }
+    .bank1{
+        width: 18%;
+    }
+    .credits-work2{
+        padding: 0% 0% 0% 7%;
+    }
+    .contact p{
+        font-size: 20px;
+    }
+    .contact h1{
+        font-size: 20px;
+    }
+    .txt-ransom {
+        font-size: 14px;
+    }
+    .ransom{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 361px){
+    .thrid-content h1 {
+        font-size: 20px;
+    }
+    .second-content h1 {
+        font-size: 20px;
+    }
+    .txt-content h1 {
+        font-size: 30px;
+    }
+    .txt-content p {
+        font-size: 18px;
+    }
+    .first-content {
+        padding: 0% 5% 0% 5%;
+        text-align: justify;
+    }
+    .ransom {
+        font-size: 13px;
+    }
+    .txt-ransom {
+        font-size: 12px;
+    }
+    .ysl-txt p {
+        font-size: 14px;
+    }
+    .credit-txt1 span {
+        font-size: 21px;
+    }
+    .credit-txt2 span {
+        font-size: 21px;
+    }
+    .rub1 {
+        width: 16%;
+    }
+    .bank1 {
+        width: 17%;
+    }
+    .contact p {
+        font-size: 18px;
+    }
+    .contact h1 {
+        font-size: 19px;
+    }
+    .logo {
+        width: 275px;
+    }
+    nav {
+        margin-top: 27%;
+    }
+    .container {
+        min-width: 200px;
+    }
+}
+@media screen and (max-width: 321px) {
+   
+    .container {
+    margin:0px;
+    }
+    .logo{
+        width: 240px;
+    }
+}
