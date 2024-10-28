@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      
+    environment:
+      NODE_VERSION: "16"  # Переменная окружения для версии Node.js
+    
+  nginx:
+    build: ./nginx 
+    ports:
+      - "80:80"  # Открываем порт, на котором работает приложение
+      - "443:443"  # Открываем порт, на котором работает приложение
+    env_file: ".env"
