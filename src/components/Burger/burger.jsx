@@ -26,7 +26,7 @@ const YourMenuComponent = () => {
             </button>
             <ul className={`topmenu ${isBurgerMenuOpen ? 'burger-open' : ''}`}>
                 <li><a href="/home">Главная</a></li>
-                <li><a href="/cosmetology">Каталог</a></li>
+                <li><a href="/list">Каталог</a></li>
                 <li><a href="#credit">Автокредит</a></li>
                 <li><a href="#ysl">Услуги</a></li>
                 <li className='tg-but'><a href="https://t.me/mmshkurin">Свзяться</a></li>;
