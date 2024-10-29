@@ -391,6 +391,12 @@
     .ransom{
         font-size: 15px;
     }
+    .txt-content h1{
+        display: none;
+    }
+    .first-content{
+        margin-top: 10%;
+    }
 }
 
 @media screen and (max-width: 361px){
