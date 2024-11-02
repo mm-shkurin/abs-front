@@ -43,6 +43,7 @@ const AutoList = () => {
       <select className='category' id="category" value={categoryId} onChange={handleCategoryChange}>
         <option value="1">Новые автомобили</option>
         <option value="2">Б/У автомобили</option>
+        <option value="3">Архив автомобилей</option>
       </select>
 
       <div className="container-with-cars">
