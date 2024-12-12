@@ -86,7 +86,7 @@ const AddCarForm = () => {
         });
         
         try {
-        await axios.post('http://127.0.0.1:8000/api/v1/autolist/', form, {
+        await axios.post('https://mm-shkurin-abs-api-712a.twc1.net/api/v1/autolist/', form, {
         headers: {
         Authorization: `Bearer ${accessToken}`,
         'Content-Type': 'multipart/form-data',
