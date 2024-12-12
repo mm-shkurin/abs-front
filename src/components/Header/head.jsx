@@ -8,7 +8,7 @@ function Header() {
         <header className='header'>
             <div className="container">
                 <div className="header_row">
-                   <img src={logo} className="logo" alt="logo" /> 
+                   <a  href="/home"><img src={logo} className="logo" alt="logo" /> </a>
                     <YourMenuComponent></YourMenuComponent>
                 </div>
             </div>

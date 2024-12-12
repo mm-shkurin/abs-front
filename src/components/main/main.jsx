@@ -117,7 +117,7 @@ function Main() {
                             <h1>Адрес:</h1>
                             <p>Жукова 65/1</p>
                             <h1>Ссылка на телеграм:</h1>
-                            <p><a href='https://t.me/automarshall'>АвтоМаршл</a></p>
+                            <p><a href='https://t.me/absoluteomsk555'>АбсолютАвто</a></p>
 
                         </div>
                     </div>

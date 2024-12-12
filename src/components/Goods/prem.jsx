@@ -1,85 +1,112 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import './../Goods/Goods.css';
-import { Link } from 'react-router-dom';
 
 const AutoList = () => {
-  const [cars, setCars] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [categoryId, setCategoryId] = useState(1);
+    const [cars, setCars] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const [categoryId, setCategoryId] = useState('');
+    const [showForm, setShowForm] = useState(false);
+    const navigate = useNavigate();
 
-  const fetchCars = async (category) => {
-    setLoading(true);
-    setError(null); // Сброс ошибки перед новым запросом
-    try {
-      const response = await axios.get(`https://mm-shkurin-abs-api-3258.twc1.net/api/v1/autolist/?category=${category}`);
-      setCars(response.data.posts);
-      setLoading(false);
-    } catch (error) {
-      setError(error);
-      setLoading(false);
-    }
-  };
+    // Загрузка категорий
+    const fetchCategories = async () => {
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/categories/');
+            setCategories(response.data);
 
-  useEffect(() => {
-    fetchCars(categoryId);
-  }, [categoryId]);
+            // Устанавливаем первую категорию по умолчанию
+            if (response.data.length > 0) {
+                setCategoryId(response.data[0].id);
+            }
+        } catch (err) {
+            setError('Ошибка загрузки категорий');
+        }
+    };
 
-  const handleCategoryChange = (e) => {
-    setCategoryId(e.target.value);
-  };
+    // Загрузка автомобилей
+    const fetchCars = async (categoryId) => {
+        setLoading(true);
+        setError(null);
 
-  if (loading) {
-    return (<p>Loading...</p>);
-  }
+        try {
+            const response = await axios.get('http://127.0.0.1:8000/api/v1/autolist/', {
+                params: { categories: categoryId },
+            });
+            setCars(response.data);
+        } catch (err) {
+            setError('Ошибка загрузки автомобилей');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-  if (error) {
-    return <p>Error loading cars: {error.message}</p>;
-  }
+    const handleCategoryChange = (e) => {
+        setCategoryId(Number(e.target.value));
+    };
 
-  return (
-    <div className="container">
-      <select className='category' id="category" value={categoryId} onChange={handleCategoryChange}>
-        <option value="1">Новые автомобили</option>
-        <option value="2">Б/У автомобили</option>
-      </select>
+    useEffect(() => {
+        fetchCategories();
+    }, []);
 
-      <div className="container-with-cars">
-        {cars.map(car => (
-          <div className="card" key={car.id}>
-            <div className="card__top">
-              <Link to={`/car/${car.id}`} className="card__image">
-                {car.img && (
-                  <img src={`https://mm-shkurin-abs-api-3258.twc1.net${car.img}`} alt={car.title} />
-                )}
-              </Link>
+    useEffect(() => {
+        if (categoryId) {
+            fetchCars(categoryId);
+        }
+    }, [categoryId]);
+
+    if (loading) return <p>Загрузка...</p>;
+    if (error) return <p>{error}</p>;
+
+    return (
+        <div className="container">
+            <div className="select-cont">
+                <select className="category" value={categoryId} onChange={handleCategoryChange}>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category.id}>
+                            {category.name}
+                        </option>
+                    ))}
+                </select>
             </div>
-            <div className="card__bottom">
-              <Link to={`/car/${car.id}`} className="card__title">
-                {car.title}
-              </Link>
-              <div className="card__details">
-                <div className="card__price">
-                  <strong>Цена:</strong> {car.price || 'Не указана'}₽
-                </div>
-                <div className="card__owners">
-                <strong>Год:</strong> {car.year ? `${car.year}` : 'Не указан'}
-                </div>
-                <div className="card__mileage">
-                  <strong>Пробег:</strong> {car.mileage ? `${car.mileage} км` : 'Не указан'}
-                </div>
-                <div className="card__owners">
-                  <strong>Владельцев:</strong> {car.owners || 'Не указано'}
-                </div>
-              
-              </div>
+
+            <div className="container-with-cars">
+                {cars.map((car) => (
+                    <div className="car-card" key={car.id}>
+                        <Link to={`/car/${car.id}`} className="car-image">
+                            {car.images?.length > 0 ? (
+                                <img src={car.images[0].img} alt={car.title} />
+                            ) : (
+                                <p>Нет изображения</p>
+                            )}
+                        </Link>
+                        <div className="car-details">
+                            <Link to={`/car/${car.id}`} className="car-title">
+                                {car.title || 'Название не указано'}
+                            </Link>
+                            <p><strong>Год:</strong> {car.year || 'Не указан'}</p>
+                            <p><strong>Пробег:</strong> {car.mileage || 'Не указан'}</p>
+                            <p><strong>Владельцев:</strong> {car.owners || 'Не указано'}</p>
+                        </div>
+                        <div className="card-price">
+                            <p>{car.price || 'Не указана'}₽</p>
+                        </div>
+                    </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+
+            <div className="but-cont">
+                <Link to="/form">
+                    <button className="add-car-button" onClick={() => setShowForm(!showForm)}>
+                        {showForm ? 'Закрыть форму' : 'Добавить свой авто'}
+                    </button>
+                </Link>
+            </div>
+        </div>
+    );
 };
 
 export default AutoList;

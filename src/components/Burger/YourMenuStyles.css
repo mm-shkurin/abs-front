@@ -1,6 +1,37 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic');
-.tg-but{
-  color: red;
+
+.button {
+    padding: 20px 80px;
+    background: #58AAF4;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    position: relative;
+    overflow-x: hidden;
+    
+}
+
+.button .flare {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg); 
+    animation: flareAnimation;
+    left: -150%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
 }
 .container {
   margin: 0 auto; /* Центровка контейнера */
@@ -35,6 +66,7 @@
 nav {
   text-align: center;
   margin-top: 8%;
+  display: flex;
 }
 
 nav a {
@@ -47,18 +79,15 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-right: 10px;
 }
 
 .topmenu > li {
   display: inline-block;
   position: relative;
   margin-right: -4px;
-  border-left: 1px solid #ECF1F2;
 }
 
-.topmenu > li:last-child {
-  border-right: 1px solid #ECF1F2;
-}
 
 .topmenu > li > a {
   padding: 20px 30px;
@@ -154,9 +183,6 @@ nav li:hover > .submenu {
   .submenu a{
     font-size: 14px;
   }
-  .container{
-    min-width: 990px;
-  }
 }
 
 @media screen and (max-width: 922px) {
@@ -170,7 +196,7 @@ nav li:hover > .submenu {
 }
 
 @media screen and (max-width: 857px) {
-    
+    .button{display: none;}
     .topmenu {
     display: none;
     flex-direction: column;
