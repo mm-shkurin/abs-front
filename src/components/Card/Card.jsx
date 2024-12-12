@@ -14,7 +14,7 @@ const CarDetails = () => {
     useEffect(() => {
         const fetchCar = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:8000/api/v1/autolist/${id}/`);
+                const response = await axios.get(`https://mm-shkurin-abs-api-712a.twc1.net/api/v1/autolist/${id}/`);
                 setCar(response.data);
             } catch (err) {
                 setError(err);

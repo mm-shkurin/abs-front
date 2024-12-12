@@ -13,7 +13,7 @@ const AutoList = () => {
     // Загрузка категорий
     const fetchCategories = async () => {
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/categories/');
+            const response = await axios.get('https://mm-shkurin-abs-api-712a.twc1.net/api/v1/categories/');
             const fetchedCategories = response.data;
             setCategories(fetchedCategories);
 
@@ -32,7 +32,7 @@ const AutoList = () => {
         setError(null);
 
         try {
-            const response = await axios.get('http://127.0.0.1:8000/api/v1/autolist/', {
+            const response = await axios.get('https://mm-shkurin-abs-api-712a.twc1.net/api/v1/autolist/', {
                 params: { categories: categoryId },
             });
             setCars(response.data);

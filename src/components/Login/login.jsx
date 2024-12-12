@@ -26,7 +26,7 @@ const Login = () => {
         setMessage(""); // Сбрасываем предыдущее сообщение
 
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/token/", formData);
+            const response = await axios.post("https://mm-shkurin-abs-api-712a.twc1.net/api/token/", formData);
             const { access, refresh } = response.data;
 
             // Сохраняем токены в localStorage

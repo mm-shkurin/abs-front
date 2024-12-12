@@ -23,7 +23,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/register/", formData);
+            const response = await axios.post("https://mm-shkurin-abs-api-712a.twc1.net/api/register/", formData);
             setMessage("Регистрация прошла успешно. Теперь вы можете авторизоваться.");
         } catch (error) {
             setMessage("Ошибка регистрации. Проверьте введённые данные.");

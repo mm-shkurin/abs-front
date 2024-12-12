@@ -44,7 +44,7 @@ const AddCarForm = () => {
         if (isTokenValid()) {
             setIsAuthorized(true);
             // Загрузка категорий
-            axios.get('http://127.0.0.1:8000/api/v1/categories/')
+            axios.get('https://mm-shkurin-abs-api-712a.twc1.net/api/v1/categories/')
                 .then(response => setCategories(response.data))
                 .catch(err => console.error('Ошибка при загрузке категорий:', err));
         }
