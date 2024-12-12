@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './../Goods/Goods.css';
 
 const AutoList = () => {
@@ -9,18 +9,17 @@ const AutoList = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [categoryId, setCategoryId] = useState('');
-    const [showForm, setShowForm] = useState(false);
-    const navigate = useNavigate();
 
     // Загрузка категорий
     const fetchCategories = async () => {
         try {
             const response = await axios.get('http://127.0.0.1:8000/api/v1/categories/');
-            setCategories(response.data);
+            const fetchedCategories = response.data;
+            setCategories(fetchedCategories);
 
             // Устанавливаем первую категорию по умолчанию
-            if (response.data.length > 0) {
-                setCategoryId(response.data[0].id);
+            if (fetchedCategories.length > 0) {
+                setCategoryId(fetchedCategories[0].id);
             }
         } catch (err) {
             setError('Ошибка загрузки категорий');
@@ -44,14 +43,17 @@ const AutoList = () => {
         }
     };
 
+    // Обработчик изменения категории
     const handleCategoryChange = (e) => {
         setCategoryId(Number(e.target.value));
     };
 
+    // Загрузка данных при монтировании
     useEffect(() => {
         fetchCategories();
     }, []);
 
+    // Загрузка автомобилей при изменении категории
     useEffect(() => {
         if (categoryId) {
             fetchCars(categoryId);
@@ -100,8 +102,8 @@ const AutoList = () => {
 
             <div className="but-cont">
                 <Link to="/form">
-                    <button className="add-car-button" onClick={() => setShowForm(!showForm)}>
-                        {showForm ? 'Закрыть форму' : 'Добавить свой авто'}
+                    <button className="add-car-button">
+                        Добавить свой авто
                     </button>
                 </Link>
             </div>
