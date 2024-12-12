@@ -60,7 +60,7 @@ const CarDetails = () => {
         // Обработка относительных и абсолютных путей
         return image.img.startsWith('http')
             ? image.img
-            : `http://127.0.0.1:8000${image.img}`;
+            : `https://mm-shkurin-abs-api-712a.twc1.net${image.img}`;
     }) || [];
 
     return (
