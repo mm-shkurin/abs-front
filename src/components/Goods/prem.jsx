@@ -77,7 +77,7 @@ const AutoList = () => {
 
             <div className="container-with-cars">
                 {cars.map((car) => (
-                    <div className="car-card" key={car.id}>
+                    <div className="card" key={car.id}>
                         <Link to={`/car/${car.id}`} className="car-image">
                             {car.images?.length > 0 ? (
                                 <img src={car.images[0].img} alt={car.title} />

@@ -1,0 +1,42 @@
+.test-card {
+    background-color: #141720; 
+    color: white;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1%;
+    position: relative;
+    border-radius: 20px;
+    text-align: left;
+    overflow: hidden;
+    }
+    
+    .test-card::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 20px;
+    background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(58, 207, 213, 0.6) 5%,
+    rgba(58, 78, 213, 0) 30%
+    );
+    pointer-events: none;
+    opacity: var(--glow-opacity, 0);
+    transition: opacity 0.3s ease-out;
+    }
+    .test-card h1 {
+    font-size: 32px;
+    margin-bottom: 0;
+    }
+    
+    .test-card p {
+    font-size: 16px;
+    margin: 5px 0;
+    }
+    
+    .test-h1, .test-p {
+    width: 65%;
+    }

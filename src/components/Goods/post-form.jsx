@@ -177,7 +177,14 @@ const AddCarForm = () => {
                         value={formData.gearbox}
                         onChange={handleInputChange}
                     />
-
+                    <input
+                        className="inputinform"
+                        type="text"
+                        name="phone"
+                        placeholder="Номер для связи"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                    />
                     <p>Выберите категорию:</p>
                     <select
 className="selectcat"

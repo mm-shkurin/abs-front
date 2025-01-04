@@ -1,6 +1,9 @@
 .conteiner{
     padding: 0% 10% 0% 10%;
 }
+.logo{
+    width: 270px;
+}
 .pic{
     padding-top: 5%;
     margin-left: 10%;
@@ -139,9 +142,6 @@
     .topmenu > li > a{
         font-size:20px;
     }
-    .logo{
-        width: 233px;
-    }
 }
 @media screen and (max-width: 1200px){
     .second-content h1{
@@ -199,7 +199,7 @@
         margin-left: 120px;
     }
     .logo{
-        width: 215px;
+        width: 210px;
     }
 }
 
@@ -276,7 +276,7 @@
         padding: 0% 0% 0% 0%;
     }
     .logo{
-        width:303px
+        width:250px
     }
     nav{
         margin-top: 20%;
