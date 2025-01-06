@@ -110,6 +110,7 @@
   .card{
     display: flex;
     flex-direction: column;
+    padding: 5px;
   }
   .car-image{
     width: 100%;

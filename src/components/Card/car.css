@@ -164,7 +164,7 @@
         
     }
     .car-but{
-        margin-left: 20%;
+        margin-left: 15%;
         
     }
     .card-content2 {
@@ -208,11 +208,16 @@
         min-width:none; 
     }
 }
-@media screen and (max-width: 857px) {
+@media screen and (max-width: 550px) {
     .h1-car{
         font-size:28px ;
     }
     .car-card{
         min-width:359px ;
+    }
+    
+    .car-but{
+        margin-left: 10%;
+        
     }
 }

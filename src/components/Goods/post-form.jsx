@@ -15,7 +15,7 @@ const AddCarForm = () => {
         power: '',
         gearbox: '',
         images: [],
-        categories: [],
+        categories: [4],
     });
 
     const [categories, setCategories] = useState([]);
@@ -185,20 +185,6 @@ const AddCarForm = () => {
                         value={formData.phone}
                         onChange={handleInputChange}
                     />
-                    <p>Выберите категорию:</p>
-                    <select
-className="selectcat"
-name="categories"
-multiple
-value={formData.categories}
-onChange={handleCategoryChange}
->
-{categories.map((category) => (
-<option key={category.id} value={category.id}>
-{category.name}
-</option>
-))}
-</select>
 
                     <input
                         className="inputinform"
@@ -225,8 +211,7 @@ onChange={handleCategoryChange}
                     <button className="but-inform" type="submit">
                         Добавить
                     </button>
-                    category.name - Данный веб-сайт выставлен..
-                    category.name
+                   
                     <button className="but-inform" type="button" onClick={() => navigate('/')}>
                         Отмена
                     </button>
